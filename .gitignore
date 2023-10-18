@@ -1,0 +1,8 @@
+/venv/
+/.vscode/
+/aws_neuron_venv_pytorch/
+/compiler_wd/
+/device_maps/
+/models/
+/neuronxcc*
+*.pickle

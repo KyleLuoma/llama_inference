@@ -1,0 +1,3 @@
+2023-10-18T00:18:48Z WARNING 16718 [job.Frontend.0]: TVM not detected.
+2023-10-18T00:22:11Z WARNING 16718 [GlobalLayoutOpt]: set mhlo_add_35 as nonlocal, num loadstores: 33
+2023-10-18T00:22:17Z WARNING 16718 [LayoutBottleneck]: Connected component _subtract.2109 has no matmult/reduce/batchnorm. Guessing layout. Considering putting on CPU.

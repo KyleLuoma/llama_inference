@@ -1,0 +1,35 @@
+#Database: ATBI
+#
+#MS SQL Server tables, with their properties:
+#
+#tbl_Deadwood( Data_ID int, Event_ID int, OldPlot nvarchar, Module float, Decay nvarchar, MPD float, Length float, X_coord float, Y_coord float, SSMA_TimeStamp timestamp)
+#tbl_Events( Event_ID int, Location_ID int, Event_Date datetime2, Crew_Members nvarchar, Event_Notes nvarchar, Updated_Date datetime2, SSMA_TimeStamp timestamp)
+#tbl_Locations( Location_ID int, Plot_ID nvarchar, X_Coord int, Y_Coord int, Plot_Azimuth real, Trail nvarchar, Directions nvarchar, SiteDescription nvarchar, Slope smallint, Aspect smallint, Slope_shape nvarchar, Topo_Position int, Elevation smallint, A_Horizon real, Litter_depth real, Agriculture nvarchar, QuadName nvarchar, Logging nvarchar, Fire nvarchar, Pine_beetle nvarchar, Windstorm nvarchar, Hogs nvarchar, Other_Disturbance nvarchar, Loc_Notes nvarchar, Association_observed smallint, Eco_Notes nvarchar, PlaceNameID int, GIS_Location_ID uniqueidentifier, Coord_Units nvarchar, Coord_System nvarchar, UTM_Zone nvarchar, Datum nvarchar, Est_H_Error real, Accuracy_Notes nvarchar, Unit_Code nvarchar, Updated_Date nvarchar, SSMA_TimeStamp timestamp)
+#tbl_Nests( Nest_ID int, Event_ID int, SpCode nvarchar, Module smallint, Presence_First smallint, Cover int, Presence_Second smallint, R1 smallint, R2 int)
+#tbl_Overstory( Overstory_ID int, Event_ID int, TreeTag int, SpCode nvarchar, DBH float, CanPos float, TreeCond float, notes nvarchar, SSMA_TimeStamp timestamp)
+#tbl_Saplings( Saplings_ID int, Event_ID int, Module int, spcode nvarchar, DClass1 float, DClass2 float, DClass3 float, DClass4 float, Condition int, SSMA_TimeStamp timestamp)
+#tbl_Seedlings( Seedlings_ID int, Event_ID int, oldPlot nvarchar, Module int, SpCode nvarchar, Density float, SSMA_TimeStamp timestamp)
+#tbl_Tree_Tags( Tree_Tag_ID int, Location_ID int, Tag smallint, oldPlot nvarchar, Module float, Xcoord float, Ycoord float, SpCode nvarchar, Plot float, Notes nvarchar, SSMA_TimeStamp timestamp)
+#tbl_WitnessTrees( WitnessTree_ID int, Location_ID int, Witness_SpCode nvarchar, Witness_Azimuth real, Witness_DBH real, Witness_stake real, SSMA_TimeStamp timestamp)
+#tlu_Can_Pos( CanPos_Num float, CanPos_Name nvarchar, SSMA_TimeStamp timestamp)
+#tlu_Cover_Cls( CoverClass_Num int, CoverClass_Text nvarchar)
+#tlu_DecayStage( DecayStage_ID nvarchar, DecayStage_Descr nvarchar, SSMA_TimeStamp timestamp)
+#tlu_Live_Dead( Cond_Num int, Cond_Text nvarchar)
+#tlu_Mod_Num( Mod_Num int)
+#tlu_PlaceNames( ID int, Name nvarchar, County nvarchar, State nvarchar, utmE int, utmN float, SSMA_TimeStamp timestamp)
+#tlu_PlantSpecies( genus nvarchar, subgenus nvarchar, species nvarchar, subspecies nvarchar, SpeciesCode nvarchar, Author nvarchar, CommonName nvarchar, SpeciesNotes nvarchar, SSMA_TimeStamp timestamp)
+#tlu_Presence( Pres_Num smallint, Pres_Text nvarchar)
+#tlu_R1_RestOfPlot( Pres_Num smallint, Pres_Text nvarchar)
+#tlu_Roads_and_Trails( ListedName nvarchar, ValidName nvarchar, Layer nvarchar, Notes nvarchar, SSMA_TimeStamp timestamp)
+#tlu_Slope_Shape( Shape nvarchar)
+#tlu_topo_position( ID int, TopoPosition nvarchar)
+#tlu_Tree_Cond( TreeCond_Num float, TreeCond_Text nvarchar, SSMA_TimeStamp timestamp)
+#tlu_Yes_No( Yes_No nvarchar)
+#tsys_App_Defaults( Project nvarchar, Park nvarchar, User_name nvarchar, Activity nvarchar, UTM_Zone nvarchar, Datum nvarchar, Release_ID nvarchar, Link_file_path nvarchar, Backup_prompt_startup bit, Backup_prompt_exit bit, Compact_be_exit bit, Verify_links_startup bit, SSMA_TimeStamp timestamp)
+#tsys_App_Releases( Release_ID nvarchar, Release_date datetime2, Database_title nvarchar, Version_number nvarchar, File_name nvarchar, Release_by nvarchar, Release_notes nvarchar, Author_phone nvarchar, Author_email nvarchar, Author_org nvarchar, Author_org_name nvarchar, SSMA_TimeStamp timestamp)
+#tsys_Bug_Reports( Bug_ID nvarchar, Release_ID nvarchar, Report_date datetime2, Found_by nvarchar, Reported_by nvarchar, Report_details nvarchar, Fix_date datetime2, Fixed_by nvarchar, Fix_details nvarchar, SSMA_TimeStamp timestamp)
+#tblTimes( dest varchar, times varchar)
+#sysdiagrams( name nvarchar, principal_id int, diagram_id int, version int, definition varbinary)
+#
+### a sql query, written in the MS SQL Server dialect, to answer the question: What tree species have been observed within nested subplots? Show the species code, genus, sub genus, and common name.
+SELECT
